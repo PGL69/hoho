@@ -25,6 +25,12 @@
       "type": "shell",
       "command": "git push",
       "group": "build"
+    },
+    {
+      "label": "git-status",
+      "type": "shell",
+      "command": "git status",
+      "group": "build"
     }
   ]
 }
