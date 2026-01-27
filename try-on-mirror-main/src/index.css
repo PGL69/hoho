@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Virtual Dressing Room - Fashion-Forward Design System */
+/* Warm, elegant aesthetic with cream/beige tones and golden accents */
+
+@layer base {
+  :root {
+    /* Core palette - Warm cream and charcoal */
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 99%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 25% 99%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Primary - Deep charcoal */
+    --primary: 30 10% 15%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Secondary - Warm beige */
+    --secondary: 35 20% 93%;
+    --secondary-foreground: 30 10% 25%;
+
+    /* Muted - Soft cream */
+    --muted: 35 15% 92%;
+    --muted-foreground: 30 8% 45%;
+
+    /* Accent - Golden honey */
+    --accent: 38 60% 70%;
+    --accent-foreground: 30 10% 15%;
+
+    /* Rose - Soft blush */
+    --rose: 350 60% 75%;
+    --rose-foreground: 350 60% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 38 60% 70%;
+
+    --radius: 1rem;
+
+    /* Custom gradients */
+    --gradient-button: linear-gradient(135deg, hsl(30, 10%, 15%) 0%, hsl(30, 12%, 25%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38, 60%, 70%) 0%, hsl(35, 55%, 65%) 100%);
+    --gradient-background: linear-gradient(135deg, hsl(40, 33%, 98%) 0%, hsl(35, 25%, 95%) 100%);
+
+    /* Custom shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30, 10%, 15%, 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(30, 10%, 15%, 0.1);
+    --shadow-hover: 0 12px 40px -12px hsl(30, 10%, 15%, 0.15);
+
+    /* Sidebar - using same warm palette */
+    --sidebar-background: 40 25% 98%;
+    --sidebar-foreground: 30 10% 26%;
+    --sidebar-primary: 30 10% 15%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 35 15% 96%;
+    --sidebar-accent-foreground: 30 10% 15%;
+    --sidebar-border: 35 20% 91%;
+    --sidebar-ring: 38 60% 70%;
+  }
+
+  .dark {
+    --background: 30 10% 8%;
+    --foreground: 40 33% 95%;
+
+    --card: 30 10% 10%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 30 10% 10%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 40 33% 95%;
+    --primary-foreground: 30 10% 15%;
+
+    --secondary: 30 12% 18%;
+    --secondary-foreground: 40 33% 95%;
+
+    --muted: 30 12% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 38 50% 55%;
+    --accent-foreground: 40 33% 95%;
+
+    --rose: 350 50% 55%;
+    --rose-foreground: 350 60% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 38 50% 55%;
+
+    --sidebar-background: 30 10% 8%;
+    --sidebar-foreground: 40 33% 90%;
+    --sidebar-primary: 38 50% 55%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 30 12% 15%;
+    --sidebar-accent-foreground: 40 33% 90%;
+    --sidebar-border: 30 12% 15%;
+    --sidebar-ring: 38 50% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background: var(--gradient-background);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .gradient-button {
+    background: var(--gradient-button);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .btn-hero {
+    background: var(--gradient-button);
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+  }
+
+  .btn-hero:hover:not(:disabled) {
+    box-shadow: var(--shadow-hover);
+    transform: scale(1.02);
+  }
+
+  .btn-hero:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  .btn-hero:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .upload-zone {
+    border: 2px dashed hsl(var(--border));
+    transition: all 0.3s ease;
+  }
+
+  .upload-zone:hover, .upload-zone.drag-over {
+    border-color: hsl(var(--accent));
+    background-color: hsl(var(--accent) / 0.05);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--accent) / 0.3) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-2xl border border-border;
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px hsl(var(--accent) / 0.5); }
+    50% { opacity: 0.7; box-shadow: 0 0 16px hsl(var(--accent) / 0.8); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+}

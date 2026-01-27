@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev",
+      "type": "shell",
+      "command": "cd try-on-mirror-main && npm run dev",
+      "isBackground": true,
+      "group": "build"
+    },
+    {
+      "label": "git-add",
+      "type": "shell",
+      "command": "git add .",
+      "group": "build"
+    },
+    {
+      "label": "git-commit",
+      "type": "shell",
+      "command": "git commit -m \"Add complete virtual try-on mirror project\"",
+      "group": "build"
+    },
+    {
+      "label": "git-push",
+      "type": "shell",
+      "command": "git push",
+      "group": "build"
+    }
+  ]
+}
