@@ -75,7 +75,10 @@ function extractImageFromJson(data: any): string | null {
   return null;
 }
 
-Deno.serve(async (req) => {
+// Add a declaration for Deno to satisfy TypeScript and explicitly type the request parameter
+declare const Deno: any;
+
+Deno.serve(async (req: Request) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
