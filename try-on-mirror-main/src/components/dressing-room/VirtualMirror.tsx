@@ -97,9 +97,10 @@ const VirtualMirror = ({ isActive, garmentType, textureUrl }: VirtualMirrorProps
       {/* Hidden video element for camera input */}
       <video
         ref={videoRef}
-        className="absolute opacity-0 pointer-events-none"
-        playsInline
-        muted
+  className="absolute opacity-0 pointer-events-none"
+  style={{ transform: 'scaleX(-1)' }}
+  playsInline
+  muted
       />
       
       {/* Canvas for webcam background */}

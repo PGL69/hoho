@@ -60,11 +60,8 @@ export function usePoseDetection({ onResults, enabled = true }: UsePoseDetection
         if (canvasRef.current && videoRef.current) {
           const ctx = canvasRef.current.getContext('2d');
           if (ctx) {
-            ctx.save();
-            ctx.scale(-1, 1);
-            ctx.translate(-canvasRef.current.width, 0);
-            ctx.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
-            ctx.restore();
+           ctx.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
+
           }
         }
       });
